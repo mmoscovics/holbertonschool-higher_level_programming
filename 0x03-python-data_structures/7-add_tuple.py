@@ -13,4 +13,5 @@ def add_tuple(a=(), b=()):
         b = (0, 0)
     elif len(b) is 1:
         b = (b[0], 0)
-    return tuple(map(lambda x, y: x + y, a, b))
+    tup = tuple(map(lambda x, y: x + y, a, b))
+    return tup
