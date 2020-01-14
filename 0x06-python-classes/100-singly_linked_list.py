@@ -39,6 +39,7 @@ class Node:
             raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
+
 class SinglyLinkedList:
     """ Class SinglyLinkedList that defines a singly linked list. """
 
@@ -55,7 +56,7 @@ class SinglyLinkedList:
         if pos is None:
             string = ""
             return string
-        while pos is not None :
+        while pos is not None:
             string += str(pos.data) + '\n'
             pos = pos.next_node
         return string[:-1]
