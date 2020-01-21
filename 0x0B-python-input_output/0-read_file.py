@@ -5,5 +5,7 @@
 def read_file(filename=""):
     """ Reads a text file and prints to stdout. """
 
+    if filename is '':
+        return
     with open(filename, 'r') as f:
-        print(f.read()[:-1])
+        print(f.read(), end='')
