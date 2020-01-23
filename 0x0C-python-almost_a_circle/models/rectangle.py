@@ -15,6 +15,19 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
+    def area(self):
+        """ Public method for area.
+        Returns area value of Rectangle. """
+
+        return self.width * self.height
+
+    def display(self):
+        """ Public method that prints in stdout the Rectangle.
+        Using character #. """
+
+        for height_iter in range(self.height):
+            print('#' * self.width)
+
     @property
     def width(self):
         """ Public getter for width.
