@@ -25,8 +25,10 @@ class Rectangle(Base):
         """ Public method that prints in stdout the Rectangle.
         Using character #. """
 
+        for y_iter in range(self.y):
+            print()
         for height_iter in range(self.height):
-            print('#' * self.width)
+            print(' ' * self.x + '#' * self.width)
 
     def __str__(self):
         """ String representor.
