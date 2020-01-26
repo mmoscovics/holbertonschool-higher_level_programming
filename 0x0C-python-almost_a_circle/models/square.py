@@ -18,6 +18,12 @@ class Square(Rectangle):
         return "[Square] ({}) {}/{} - {}".format(
             self.id, self.x, self.y, self.size)
 
+    def to_dictionary(self):
+        """ Public method that returns the dictionary representation. """
+
+        return {'id': self.id, 'size': self.size,
+                'x': self.x, 'y': self.y}
+
     def update(self, *args, **kwargs):
         """ Public method that updates class Square.
         Assigns an argument to each attribute. """

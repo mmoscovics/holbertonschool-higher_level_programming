@@ -37,6 +37,13 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.x, self.y, self.width, self.height)
 
+    def to_dictionary(self):
+        """ Public method that returns the dictionary representation. """
+
+        return {'id': self.id,
+                'width': self.width, 'height': self.height,
+                'x': self.x, 'y': self.y}
+
     def update(self, *args, **kwargs):
         """ Public method that updates class Rectangle.
         Assigns an argument to each attribute. """
