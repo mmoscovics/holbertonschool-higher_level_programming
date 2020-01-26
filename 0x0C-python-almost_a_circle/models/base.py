@@ -55,3 +55,11 @@ class Base:
             obj = cls(1, 1, 1)
         obj.update(**dictionary)
         return obj
+
+    @classmethod
+    def load_from_file(cls):
+        """ Class method thar returns a list of instances. """
+
+        with open(cls.__name__ + ".json", "r+") as file:
+            obj = cls.from_json_string(file.read())
+        return [cls.create(**dict) for dict in obj]
