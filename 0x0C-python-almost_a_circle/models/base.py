@@ -36,3 +36,11 @@ class Base:
         list_objs = cls.to_json_string(list_objs)
         with open(cls.__name__ + ".json", "w+") as file:
             file.write(list_objs)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ Static method that returns the list of the JSON string rep. """
+
+        if json_string is None or len(json_string) <= 0:
+            return []
+        return json.loads(json_string)
