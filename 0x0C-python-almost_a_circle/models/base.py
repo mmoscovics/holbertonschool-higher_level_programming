@@ -22,7 +22,7 @@ class Base:
         """ Static method that returns the JSON string representation
         of the dictionary. """
 
-        if not list_dictionaries:
+        if list_dictionaries is None or list_dictionaries is []:
             return "[]"
         return json.dumps(list_dictionaries)
 
