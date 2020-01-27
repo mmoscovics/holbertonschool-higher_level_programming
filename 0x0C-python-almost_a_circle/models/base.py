@@ -2,6 +2,7 @@
 """ First Class Base. """
 import json
 from os.path import exists
+import csv
 
 
 class Base:
@@ -67,3 +68,26 @@ class Base:
         with open(cls.__name__ + ".json", "r+") as file:
             obj = cls.from_json_string(file.read())
         return [cls.create(**inst) for inst in obj]
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ Class method that serializes in CSV. """
+
+        if cls.__name__ is "Rectangle":
+            attributes = ("id", "width", "height", "x", "y")
+        elif cls.__name__ is "Square":
+            attributes = ("id", "size", "x", "y")
+        else:
+            return
+        list_objs = ([getattr(obj, attr) for attr in attributes]
+                     for obj in list_objs)
+        with open(cls.__name__ + ".csv", "w+", newline='') as file:
+            write_obj = csv.writer(file)
+            for row in list_objs:
+                write_obj.writerow(row)
+
+    @classmethod
+    def load_to_file_csv(cls):
+        """ Class method that deserializes in CSV. """
+
+        
