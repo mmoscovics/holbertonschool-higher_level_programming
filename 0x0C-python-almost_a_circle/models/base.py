@@ -73,6 +73,8 @@ class Base:
     def save_to_file_csv(cls, list_objs):
         """ Class method that serializes in CSV. """
 
+        if list_objs is None:
+            list_objs =[]
         if cls.__name__ is "Rectangle":
             attributes = ("id", "width", "height", "x", "y")
         elif cls.__name__ is "Square":
@@ -89,5 +91,3 @@ class Base:
     @classmethod
     def load_to_file_csv(cls):
         """ Class method that deserializes in CSV. """
-
-        
