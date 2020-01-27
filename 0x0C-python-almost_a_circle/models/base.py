@@ -50,9 +50,11 @@ class Base:
         """ Class method that returns an instance with all attributes set. """
 
         if cls.__name__ is "Rectangle":
-            obj = cls(1, 1, 1, 1)
+            obj = cls(1, 1)
         elif cls.__name__ is "Square":
-            obj = cls(1, 1, 1)
+            obj = cls(1)
+        else:
+            return None
         obj.update(**dictionary)
         return obj
 
