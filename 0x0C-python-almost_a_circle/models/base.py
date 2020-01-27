@@ -22,7 +22,7 @@ class Base:
         """ Static method that returns the JSON string representation
         of the dictionary. """
 
-        if list_dictionaries is None or len(list_dictionaries) <= 0:
+        if not list_dictionaries:
             return "[]"
         return json.dumps(list_dictionaries)
 
@@ -41,7 +41,7 @@ class Base:
     def from_json_string(json_string):
         """ Static method that returns the list of the JSON string rep. """
 
-        if json_string is None or len(json_string) <= 0:
+        if not json_string:
             return []
         return json.loads(json_string)
 
