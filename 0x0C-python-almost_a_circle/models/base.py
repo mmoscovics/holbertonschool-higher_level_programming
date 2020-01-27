@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ First Class Base. """
 import json
+from os.path import exists
 
 
 class Base:
@@ -61,6 +62,8 @@ class Base:
     def load_from_file(cls):
         """ Class method thar returns a list of instances. """
 
+        if not exists(cls.__name__ + ".json"):
+            return []
         with open(cls.__name__ + ".json", "r+") as file:
             obj = cls.from_json_string(file.read())
         return [cls.create(**inst) for inst in obj]
