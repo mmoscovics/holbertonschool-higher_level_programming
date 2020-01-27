@@ -63,4 +63,4 @@ class Base:
 
         with open(cls.__name__ + ".json", "r+") as file:
             obj = cls.from_json_string(file.read())
-        return [cls.create(**dict) for dict in obj]
+        return [cls.create(**inst) for inst in obj]
