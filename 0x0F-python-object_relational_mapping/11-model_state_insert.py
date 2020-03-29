@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Lists first State objects from a database"""
+"""Add State objects from a database"""
 from sys import argv
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
