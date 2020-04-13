@@ -3,6 +3,7 @@
 import requests
 from sys import argv
 
+
 if __name__ == "__main__":
     email = {"email": argv[2]}
     r = requets.post(argv[1], email)
